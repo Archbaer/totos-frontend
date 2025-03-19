@@ -7,7 +7,7 @@ const store = useCounterStore()
 <template>
   <div>
     <h1>Hello</h1>
-
+    <!-- Changes  -->
     {{ store.count }}
     Double: {{ store.doubleCount }}
   </div>
