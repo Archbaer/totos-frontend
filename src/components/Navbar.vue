@@ -13,6 +13,7 @@ const isActiveLink = (routePath) => {
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="flex h-18 items-center justify-between">
         <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+          <!-- Logo -->
           <RouterLink class="flex flex-shrink-0 items-center mr-4 rounded-2xl" to="/">
             <img class="rounded-full h-13 w-auto" :src="logo" alt="Cat girl" />
           </RouterLink>
