@@ -43,6 +43,19 @@ const isActiveLink = (routePath) => {
           >
             About
           </RouterLink>
+          <RouterLink
+            :class="[
+              isActiveLink('/register') ? 'bg-red-900' : 'hover:bg-amber-800 hover:text-white',
+              'text-white',
+              'px-3',
+              'text-2xl',
+              'py-2',
+              'rounded-md',
+            ]"
+            to="/register"
+          >
+            Register
+          </RouterLink>
         </div>
         <a href="http://google.com">User placeholder</a>
       </div>

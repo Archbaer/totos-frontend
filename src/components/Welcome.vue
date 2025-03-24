@@ -42,7 +42,6 @@ async function fetchingProduct() {
 
     const response = await fetch('http://localhost:8080/products', {
       method: 'GET',
-      mode: 'cors',
       headers: {
         Authorization: `${token}`,
         'Content-Type': 'application/json',
