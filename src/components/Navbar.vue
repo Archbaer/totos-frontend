@@ -1,6 +1,9 @@
 <script setup>
 import logo from '@/assets/img/catg.jpg'
 import { RouterLink, useRoute } from 'vue-router'
+import { userStore } from '@/stores/user'
+
+const userStoreInstance = userStore()
 
 const isActiveLink = (routePath) => {
   const route = useRoute()
@@ -57,7 +60,16 @@ const isActiveLink = (routePath) => {
             Register
           </RouterLink>
         </div>
-        <a href="http://google.com">User placeholder</a>
+        <div class="flex px-10 items-center justify-start">
+          <div v-if="userStoreInstance.isLoggedIn" class="flex-1 w-14">
+            <a href="/">{{ userStoreInstance.getUsername }}</a>
+          </div>
+          <div v-else class="flex-initial w-8">
+            <RouterLink class="hover:text-white text-gray-700 px-3 rounded-md py-2" to="/login">
+              Login
+            </RouterLink>
+          </div>
+        </div>
       </div>
     </div>
   </nav>

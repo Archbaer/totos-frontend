@@ -1,25 +1,47 @@
-// import { ref, computed } from 'vue'
-// import { defineStore } from 'pinia'
+import { ref, computed } from 'vue'
+import { defineStore } from 'pinia'
 
-// export const useCounterStore = defineStore('counter', () => {
-//   // States
-//   const count = ref(0)
+export const userStore = defineStore('userStore', () => {
+  // States
+  const user = ref({
+    username: localStorage.getItem('username') || '',
+    isLogged: localStorage.getItem('isLogged') === 'true',
+  })
 
-//   // Getters
-//   const doubleCount = computed(() => count.value * 2)
+  // Getters
+  const getUsername = computed(() => user.value.username)
+  const isLoggedIn = computed(() => user.value.isLogged)
 
-//   // Actions
-//   function increment() {
-//     count.value++
-//   }
+  // Actions
+  const login = (username, password) => {
+    user.value.username = username
+    user.value.isLogged = true
 
-//   function decrement() {
-//     count.value--
-//   }
+    // Persist login state
+    localStorage.setItem('username', username)
+    localStorage.setItem('isLogged', 'true')
+  }
 
-//   function setZero() {
-//     count.value = 0
-//   }
+  const logout = () => {
+    user.value.username = ''
+    user.value.isLogged = false
 
-//   return { count, doubleCount, increment, decrement, setZero }
-// })
+    // Clear persisted login state
+    localStorage.removeItem('username')
+    localStorage.removeItem('isLogged')
+  }
+
+  const setUsername = (username) => {
+    user.value.username = username
+    localStorage.setItem('username', username)
+  }
+
+  return {
+    user,
+    getUsername,
+    isLoggedIn,
+    login,
+    logout,
+    setUsername,
+  }
+})
