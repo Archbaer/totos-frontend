@@ -61,8 +61,13 @@ const isActiveLink = (routePath) => {
           </RouterLink>
         </div>
         <div class="flex px-10 items-center justify-start">
-          <div v-if="userStoreInstance.isLoggedIn" class="flex-1 w-14">
-            <a href="/">{{ userStoreInstance.getUsername }}</a>
+          <div
+            v-if="userStoreInstance.isLoggedIn"
+            class="flex items-center space-x-2 text-white text-lg"
+          >
+            <a href="/" class="hover:underline">{{ userStoreInstance.getUsername }}</a>
+            <span class="text-gray-400">|</span>
+            <a @click="userStoreInstance.logout" class="hover:underline" href="#"> Logout </a>
           </div>
           <div v-else class="flex-initial w-8">
             <RouterLink class="hover:text-white text-gray-700 px-3 rounded-md py-2" to="/login">
