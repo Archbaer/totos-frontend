@@ -46,19 +46,6 @@ const isActiveLink = (routePath) => {
           >
             About
           </RouterLink>
-          <RouterLink
-            :class="[
-              isActiveLink('/register') ? 'bg-red-900' : 'hover:bg-amber-800 hover:text-white',
-              'text-white',
-              'px-3',
-              'text-2xl',
-              'py-2',
-              'rounded-md',
-            ]"
-            to="/register"
-          >
-            Register
-          </RouterLink>
         </div>
         <div class="flex px-10 items-center justify-start">
           <div
@@ -69,9 +56,11 @@ const isActiveLink = (routePath) => {
             <span class="text-gray-400">|</span>
             <a @click="userStoreInstance.logout" class="hover:underline" href="#"> Logout </a>
           </div>
-          <div v-else class="flex-initial w-8">
-            <RouterLink class="hover:text-white text-gray-700 px-3 rounded-md py-2" to="/login">
-              Login
+          <div v-else class="text-white text-lg">
+            <RouterLink class="rounded-md py-2 hover:underline" to="/login"> Login </RouterLink>
+            <span class="text-gray-400 p-2">|</span>
+            <RouterLink class="rounded-md py-2 hover:underline" to="/register">
+              Register
             </RouterLink>
           </div>
         </div>
