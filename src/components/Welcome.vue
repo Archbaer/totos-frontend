@@ -1,5 +1,8 @@
 <script setup>
 import { useCounterStore } from '@/stores/counter'
+import Card from './Card.vue'
+import Card1 from './Card1.vue'
+import ProductCard from './ProductCard.vue'
 
 const store = useCounterStore()
 
@@ -66,4 +69,7 @@ async function fetchingProduct() {
     <br />
     <button @click="fetchingProduct">Fetch products</button>
   </div>
+  <Card />
+  <Card1 />
+  <ProductCard />
 </template>
