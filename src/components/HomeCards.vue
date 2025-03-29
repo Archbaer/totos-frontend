@@ -1,7 +1,6 @@
 <script setup>
 import { useCounterStore } from '@/stores/counter'
 import Card from './Card.vue'
-import Card1 from './Card1.vue'
 import ProductCard from './ProductCard.vue'
 
 const store = useCounterStore()
@@ -64,8 +63,10 @@ async function fetchingProduct() {
 </script>
 
 <template>
-  <section class="bg-red-100 w-full">
-    <div class="flex flex-row justify-center container-xl lg:container m-auto gap-5">
+  <section class="bg-blue-50 w-full">
+    <div
+      class="flex flex-col md:flex-row items-center justify-center container-xl lg:container m-auto gap-5"
+    >
       <Card />
       <Card
         :title="'Bien Vindo'"
