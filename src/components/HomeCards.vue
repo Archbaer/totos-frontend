@@ -64,12 +64,14 @@ async function fetchingProduct() {
 </script>
 
 <template>
-  <div>
-    <button @click="fetchData" class="text-green-600 text-5xl">Fetch test</button>
-    <br />
-    <button @click="fetchingProduct">Fetch products</button>
-  </div>
-  <Card />
-  <Card1 />
-  <ProductCard />
+  <section class="bg-red-100 w-full">
+    <div class="flex flex-row justify-center container-xl lg:container m-auto gap-5">
+      <Card />
+      <Card
+        :title="'Bien Vindo'"
+        :description="'This website was made with a Spring Backend; The backend was designed for Micro Services. The Website Front-end is entirely made in Vue.js. '"
+        :imageNum="23"
+      />
+    </div>
+  </section>
 </template>

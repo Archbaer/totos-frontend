@@ -44,7 +44,20 @@ const isActiveLink = (routePath) => {
             ]"
             to="/about"
           >
-            About
+            About Us
+          </RouterLink>
+          <RouterLink
+            :class="[
+              isActiveLink('/products') ? 'bg-red-900' : 'hover:bg-amber-800 hover:text-white',
+              'text-white',
+              'px-3',
+              'text-2xl',
+              'py-2',
+              'rounded-md',
+            ]"
+            to="/products"
+          >
+            Products
           </RouterLink>
         </div>
         <div class="flex px-10 items-center justify-start">
