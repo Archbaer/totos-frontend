@@ -61,7 +61,7 @@ const isActiveLink = (routePath) => {
           </RouterLink>
 
           <!-- Authentication Links -->
-          <div v-if="!userStoreInstance.isAuthenticated" class="flex items-center space-x-3 ml-4">
+          <div v-if="!userStoreInstance.isLoggedIn" class="flex items-center space-x-3 ml-4">
             <RouterLink
               to="/login"
               class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-500 transition-colors duration-200"
@@ -81,7 +81,7 @@ const isActiveLink = (routePath) => {
           <div v-else class="ml-4 relative">
             <div class="flex items-center space-x-3">
               <span class="text-sm font-medium text-gray-700"
-                >Welcome, {{ userStoreInstance.user?.name || 'User' }}</span
+                >Welcome, {{ userStoreInstance.user?.username || 'User' }}</span
               >
               <RouterLink
                 to="/dashboard"
@@ -181,7 +181,7 @@ const isActiveLink = (routePath) => {
         </RouterLink>
 
         <!-- Mobile Authentication Links -->
-        <div v-if="!userStoreInstance.isAuthenticated" class="pt-2">
+        <div v-if="!userStoreInstance.isLoggedIn" class="pt-2">
           <RouterLink
             to="/login"
             class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50 transition-colors duration-200"
@@ -202,7 +202,7 @@ const isActiveLink = (routePath) => {
         <!-- Mobile User Menu when logged in -->
         <div v-else class="pt-2">
           <div class="px-3 py-2 text-base font-medium text-gray-700">
-            Welcome, {{ userStoreInstance.user?.name || 'User' }}
+            Welcome, {{ userStoreInstance.user?.username || 'User' }}
           </div>
           <RouterLink
             to="/dashboard"
