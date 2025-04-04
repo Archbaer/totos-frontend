@@ -35,22 +35,13 @@ const isActiveLink = (routePath) => {
             Home
           </RouterLink>
           <RouterLink
-            to="/features"
+            to="/products"
             class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
             :class="
-              isActiveLink('/features') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-500'
+              isActiveLink('/products') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-500'
             "
           >
-            Features
-          </RouterLink>
-          <RouterLink
-            to="/pricing"
-            class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-            :class="
-              isActiveLink('/pricing') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-500'
-            "
-          >
-            Pricing
+            Products
           </RouterLink>
           <RouterLink
             to="/about"
@@ -144,28 +135,16 @@ const isActiveLink = (routePath) => {
           Home
         </RouterLink>
         <RouterLink
-          to="/features"
+          to="/products"
           class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
           :class="
-            isActiveLink('/features')
+            isActiveLink('/products')
               ? 'text-blue-600 bg-gray-50'
               : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
           "
           @click="mobileMenuOpen = false"
         >
-          Features
-        </RouterLink>
-        <RouterLink
-          to="/pricing"
-          class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
-          :class="
-            isActiveLink('/pricing')
-              ? 'text-blue-600 bg-gray-50'
-              : 'text-gray-700 hover:text-blue-500 hover:bg-gray-50'
-          "
-          @click="mobileMenuOpen = false"
-        >
-          Pricing
+          Products
         </RouterLink>
         <RouterLink
           to="/about"
