@@ -7,7 +7,7 @@ const form = ref({
   username: '',
   password: '',
   confirmpassword: '',
-})
+})#
 
 const passwordsMatch = computed(() => {
   if (form.value.password && form.value.confirmpassword) {
