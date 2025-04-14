@@ -4,6 +4,7 @@ import { ref } from 'vue'
 
 const produtos = ref([])
 
+
 async function fetchData() {
   const bodyData = {
     username: 'admin',
